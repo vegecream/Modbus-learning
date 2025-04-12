@@ -2,12 +2,17 @@
 \contentsline {section}{\numberline {2}Modbus RTU与 RS485初探}{1}{section.2}%
 \contentsline {subsection}{\numberline {2.1}简介}{1}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}联系与区别}{1}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}重点}{2}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.3}重点}{1}{subsection.2.3}%
 \contentsline {section}{\numberline {3}使用机器码实现Modbus RTU通信}{2}{section.3}%
 \contentsline {subsection}{\numberline {3.1}参数配置}{2}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}夹爪要求}{2}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}xArm要求}{3}{subsubsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.2}通用Modbus RTU指令(TO DO)}{4}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.1.2}xArm要求}{2}{subsubsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.2}通用Modbus RTU指令}{4}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}夹爪执行器特有参数(TO DO)}{4}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1} 执行器控制指令}{4}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}执行器运动参数}{4}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}执行器运动状态}{4}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}执行器产品信息}{4}{subsubsection.3.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.5}系统管理}{4}{subsubsection.3.3.5}%
 \contentsline {section}{\numberline {4}使用Python调用Modbus RTU(TO DO)}{4}{section.4}%
 \contentsline {section}{\numberline {5}可能的替代方案——I/O控制(TO DO)}{4}{section.5}%
