@@ -2,6 +2,10 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
 
 \title{Modbus RTU Learning based on RS485}
 \author{倪煜晖}
@@ -37,7 +41,7 @@ RS485使用差分传输模式,使用双绞线$A,B$之间的电位差来实现通
 % 插入图片示例
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{master}
+    \includegraphics[width=0.8\textwidth]{master_slave.png}
     \caption{一主多从}
     \label{ms}
 \end{figure}
@@ -45,6 +49,73 @@ RS485使用差分传输模式,使用双绞线$A,B$之间的电位差来实现通
 
 
 \section{使用机器码实现Modbus RTU通信}
+\subsection{参数配置}
+\subsubsection{夹爪要求}
+\begin{itemize}
+    \item 波特率： 115200
+    \item ID: 默认为1
+    \item 数据格式：默认的数据格式为无检验
+    \item 校验模式：使用16进制CRC校验码，低字节在前
+\end{itemize}
+
+这里highlight校验模式。
+
+使用手册中给出了示例通信码 01 06 01 02 00 64 28 1D。
+具体解释会在后面章节注明，也可以直接参照表格\eqref{tab:data_frame}。注意到，这里的最后两位是校验码，由前六位决定。我们遇到的报文无效问题由一部分应该是这个原因。
+
+
+\begin{table}[htbp]
+    \centering
+    \caption{数据帧格式说明}
+    \label{tab:data_frame}
+    \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.15\textwidth} 
+                                >{\raggedright\arraybackslash}p{0.1\textwidth} 
+                                >{\raggedright\arraybackslash}X 
+                                >{\raggedright\arraybackslash}X}
+        \toprule
+        \textbf{数据} & \textbf{字节} & \textbf{数据说明} & \textbf{备注} \\ 
+        \midrule
+        01            & 1             & 从机地址           & 0x01 为设备 ID 号，0x00 为广播地址（无回应） \\ 
+        \midrule
+        06            & 1             & 功能码             & 单个保持寄存器的写入 \\ 
+        \midrule
+        01 02         & 2             & 数据地址           & 0x0102 为需要执行功能码的数据地址（执行器临时区运动位置） \\ 
+        \midrule
+        00 64         & 2             & 数据值             & 0x0064 为 16 进制的 100，即将执行器运动位置（临时区）的值设定为 100 \\ 
+        \midrule
+        28 1D         & 2             & CRC 校验码         & 16 进制 CRC 校验码，低字节在前 \\ 
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+为了生成正确的校验码，我找到了\href{http://www.ip33.com/crc.html}{生成网站}并且正确生成了校验码。
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{ip33.jpg}
+    \caption{校验码}
+    \label{verti}
+\end{figure}
+
+值得注意的是，xArm手册中提到自动生成CRC校验码，不知道使用的是否为16位，也不知道采用的是低位在前还是高位在前，可能成为核心问题。
+
+\subsubsection{xArm要求}
+\begin{itemize}
+    \item 波特率：默认200000
+    \item 12位6字节十六进制编码，\bf{自动生成}CRC校验码
+\end{itemize}
+
+之前一直无法执行很有可能是位数不对与设备ID不对，应当只输入6字节，选定正确设备ID也就是1，后续尝试。
+
+\subsection{通用Modbus RTU指令(TO DO)}
+TO DO
+\subsection{夹爪执行器特有参数(TO DO)}
+TO DO
+\section{使用Python调用Modbus RTU(TO DO)}
+TO DO
+
+\section{可能的替代方案——I/O控制(TO DO)}
+TO DO
 
 
 \end{document}

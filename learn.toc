@@ -4,3 +4,10 @@
 \contentsline {subsection}{\numberline {2.2}联系与区别}{1}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}重点}{2}{subsection.2.3}%
 \contentsline {section}{\numberline {3}使用机器码实现Modbus RTU通信}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}参数配置}{2}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}夹爪要求}{2}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}xArm要求}{3}{subsubsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.2}通用Modbus RTU指令(TO DO)}{4}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}夹爪执行器特有参数(TO DO)}{4}{subsection.3.3}%
+\contentsline {section}{\numberline {4}使用Python调用Modbus RTU(TO DO)}{4}{section.4}%
+\contentsline {section}{\numberline {5}可能的替代方案——I/O控制(TO DO)}{4}{section.5}%
