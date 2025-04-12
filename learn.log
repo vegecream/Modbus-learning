@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.7.22)  12 APR 2025 11:36
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.7.22)  12 APR 2025 15:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -393,7 +393,8 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
 \Hy@SectionHShift=\skip63
-) (./learn.aux)
+)
+No file learn.aux.
 \openout1 = `learn.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
@@ -473,27 +474,68 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 10.
 Package hyperref Info: Link coloring OFF on input line 10.
- (./learn.out) (./learn.out)
 \@outlinefile=\write3
 \openout3 = `learn.out'.
 
- [1
 
-] (./learn.aux)
+Package hyperref Warning: Rerun to get /PageLabels entry.
+
+No file learn.toc.
+\tf@toc=\write4
+\openout4 = `learn.toc'.
+
+[1
+
+]
+
+LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
+(Font)              size <10.95> substituted on input line 34.
+
+
+d:/My_Code/Modbus-learning/learn.tex:40: LaTeX Error: File `master' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.40 ...cludegraphics[width=0.8\textwidth]{master}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <10.53937> not available
+(Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 50.
+[2] (./learn.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
-Package rerunfilecheck Info: File `learn.out' has not changed.
-(rerunfilecheck)             Checksum: 94658D5D37B9F5486814198F9CFE912E;177.
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.41063pt have occurred.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `learn.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `learn.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  14E2F90208C693C87B203044EA6C1FCC;623.
  ) 
 Here is how much of TeX's memory you used:
- 15087 strings out of 474773
- 333957 string characters out of 5761289
- 1923842 words of memory out of 5000000
- 37050 multiletter control sequences out of 15000+600000
- 563665 words of font info for 74 fonts, out of 8000000 for 9000
+ 15188 strings out of 474773
+ 337122 string characters out of 5761289
+ 1934842 words of memory out of 5000000
+ 37143 multiletter control sequences out of 15000+600000
+ 565323 words of font info for 88 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,6n,97p,387b,340s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,6n,97p,387b,339s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on learn.pdf (1 page).
+Output written on learn.pdf (2 pages).

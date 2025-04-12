@@ -3,21 +3,48 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 
-\title{标题}
-\author{作者}
+\title{Modbus RTU Learning based on RS485}
+\author{倪煜晖}
 \date{\today}
 
 \begin{document}
 
 \maketitle
 
-\section{引言}
-这里是引言内容。
+% 生成目录
+\tableofcontents
 
-\section{正文}
-这里是正文内容。
+\section{说明}
+记录Modbus RTU通讯协议学习过程，用于实现xArm6机械臂与知行机器人夹爪之间的通信，以备后续查看使用。
 
-\section{结论}
-这里是结论内容。
+\section{Modbus RTU与 RS485初探}
+
+\subsection{简介}
+Modbus是一种应用协议，RTU是一种通信模式，而RS485是总线串行标准。前二者工作在应用层与链路层，而RS485工作在物理层。
+
+\subsection{联系与区别}
+\begin{itemize}
+    \item Modbus RTU:一种主从通信协议。它定义了数据传输的规则，包括数据帧的格式、帧的开始和结束标志、地址域、功能码、数据区和错误检测域等。例如，在一个 Modbus RTU 帧中，地址域用于标识从设备的地址，功能码用于指定主设备希望从设备执行的操作，如读取寄存器、写入寄存器等。
+    \item RS485:一种电气接口标准，它规定了数据传输的物理层特性，如信号电平、传输速率、传输距离等。RS - 485 支持多点通信，能够在长距离和高噪声环境下可靠地传输数据。
+\end{itemize}
+
+在我们的任务中，RS - 485 提供了硬件层面的通信通道，Modbus RTU 则是在这个通道上运行的协议，规定了数据的传输格式、帧结构等内容，二者相互配合来实现设备之间的通信。
+
+\subsection{重点}
+RS485使用差分传输模式,使用双绞线$A,B$之间的电位差来实现通信。它的核心是一个主机与多个从机的通讯。这里需要注意的是，这和$\textbf{I/O}$通信完全没有关系，也就是说，我们$\textbf{I/O}$的五根线大概是没用的。由于RS485协议对电位敏感，建议在之后断开对这五根线的连接，保证接地唯一。
+
+
+% 插入图片示例
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{master}
+    \caption{一主多从}
+    \label{ms}
+\end{figure}
+确认接线之后，我们把注意力更多放在Modbus RTU上。
+
+
+\section{使用机器码实现Modbus RTU通信}
+
 
 \end{document}
